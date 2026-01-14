@@ -1,6 +1,8 @@
 "use client"
 
 import type React from "react"
+import emailjs from "@emailjs/browser"
+
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
@@ -15,12 +17,33 @@ export function Contact() {
     email: "",
     message: "",
   })
+  const [status, setStatus] = useState("")
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
+
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault()
+  setStatus("Sending...")
+
+  try {
+    await emailjs.send(
+      "YOUR_SERVICE_ID",
+      "YOUR_TEMPLATE_ID",
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+      },
+      "YOUR_PUBLIC_KEY"
+    )
+
+    setStatus("Message sent successfully ✅")
+    setFormData({ name: "", email: "", message: "" })
+  } catch (error) {
+    console.error(error)
+    setStatus("Failed to send message ❌ Try again later.")
   }
+}
+
 
   return (
     <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8">
@@ -82,6 +105,11 @@ export function Contact() {
                 <Button type="submit" size="lg" className="w-full">
                   Send Message
                 </Button>
+                {status && (
+                    <p className="text-sm text-center text-muted-foreground">
+                {status}
+                </p>
+              )}
               </form>
             </CardContent>
           </Card>
