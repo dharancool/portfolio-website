@@ -41,14 +41,7 @@ In addition, I contributed significantly to authoring, reviewing, and revising t
       "Agile Methodologies",
     ],
   },
-  {
-    period: "2020 — 2022",
-    title: "Frontend Developer",
-    company: "Digital Agency",
-    description:
-      "Created responsive websites and web applications for clients across multiple industries. Collaborated with designers to implement pixel-perfect interfaces and ensure seamless user experiences.",
-    skills: ["HTML", "CSS", "JavaScript", "Vue.js"],
-  },
+
 ];
 
 export function Experience() {

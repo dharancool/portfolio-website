@@ -4,29 +4,29 @@ import { ExternalLink, Github } from "lucide-react"
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "Real-Estate-Management-System",
     description:
       "A full-stack e-commerce solution with payment integration, inventory management, and admin dashboard. Built with modern technologies for optimal performance.",
     image: "/modern-ecommerce-dashboard.png",
-    technologies: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
-    github: "https://github.com",
+    technologies: ["Python","Bootstrap", "Django", "MySQL", "Relational Databases", "Bootstrap","PyMySQL"],
+    github: "https://github.com/dharancool/Real-Estate-Management-System-Project",
     live: "https://example.com",
   },
   {
-    title: "Project Management Tool",
+    title: "Calendar Scheduling App",
     description:
       "Collaborative project management application with real-time updates, task tracking, and team communication features.",
-    image: "/project-management-dashboard.png",
-    technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
-    github: "https://github.com",
+    image: "/Calendar.png",
+    technologies: ["Java", "MVC", "JUnit4", "Unit Testing", "Git","Java Swing","Code Coverage", "Object-Oriented Programming", "Code Review"],
+    github: "https://github.com/dharancool/Calendar-Application",
     live: "https://example.com",
   },
   {
-    title: "AI Content Generator",
+    title: "Portfolio Website",
     description:
-      "AI-powered content generation tool that helps users create blog posts, social media content, and marketing copy using advanced language models.",
-    image: "/ai-writing-tool-interface.jpg",
-    technologies: ["Next.js", "OpenAI", "Tailwind CSS", "Supabase"],
+      "A responsive portfolio website built with Next.js and Tailwind CSS, showcasing my projects and skills.",
+    image: "/Portfolio_Site.png",
+    technologies: ["Next.js","JavaScript", "TypeScript", "Tailwind CSS"],
     github: "https://github.com",
     live: "https://example.com",
   },
