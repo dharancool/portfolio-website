@@ -94,7 +94,7 @@ export function Contact() {
                 </div>
                 <div className="space-y-1">
                   <h4 className="font-semibold text-foreground">Email</h4>
-                  <p className="text-muted-foreground">your.email@example.com</p>
+                  <p className="text-muted-foreground">idayachandiran.g@northeastern.edu</p>
                 </div>
               </CardContent>
             </Card>
@@ -106,7 +106,7 @@ export function Contact() {
                 </div>
                 <div className="space-y-1">
                   <h4 className="font-semibold text-foreground">Phone</h4>
-                  <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                  <p className="text-muted-foreground">+1 (609) 255-9951</p>
                 </div>
               </CardContent>
             </Card>
@@ -118,7 +118,7 @@ export function Contact() {
                 </div>
                 <div className="space-y-1">
                   <h4 className="font-semibold text-foreground">Location</h4>
-                  <p className="text-muted-foreground">San Francisco, CA</p>
+                  <p className="text-muted-foreground">Boston, MA</p>
                 </div>
               </CardContent>
             </Card>
@@ -126,7 +126,7 @@ export function Contact() {
         </div>
 
         <footer className="mt-24 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Gangatharan. All rights reserved.</p>
         </footer>
       </div>
     </section>

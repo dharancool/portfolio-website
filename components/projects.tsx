@@ -6,20 +6,20 @@ const projects = [
   {
     title: "Real-Estate-Management-System",
     description:
-      "A full-stack e-commerce solution with payment integration, inventory management, and admin dashboard. Built with modern technologies for optimal performance.",
-    image: "/modern-ecommerce-dashboard.png",
+      "A full-stack real estate management system that performs CRUD operations built with Django, allowing users to manage properties, clients, and transactions efficiently.",
+    image: "/Real_Estate_Management.png",
     technologies: ["Python","Bootstrap", "Django", "MySQL", "Relational Databases", "Bootstrap","PyMySQL"],
     github: "https://github.com/dharancool/Real-Estate-Management-System-Project",
-    live: "https://example.com",
+    // live: "https://example.com",
   },
   {
     title: "Calendar Scheduling App",
     description:
-      "Collaborative project management application with real-time updates, task tracking, and team communication features.",
+      "A Scheduling application built with Java and Swing, featuring a user-friendly interface and robust functionality.",
     image: "/Calendar.png",
     technologies: ["Java", "MVC", "JUnit4", "Unit Testing", "Git","Java Swing","Code Coverage", "Object-Oriented Programming", "Code Review"],
     github: "https://github.com/dharancool/Calendar-Application",
-    live: "https://example.com",
+    // live: "https://example.com",
   },
   {
     title: "Portfolio Website",
@@ -27,8 +27,8 @@ const projects = [
       "A responsive portfolio website built with Next.js and Tailwind CSS, showcasing my projects and skills.",
     image: "/Portfolio_Site.png",
     technologies: ["Next.js","JavaScript", "TypeScript", "Tailwind CSS"],
-    github: "https://github.com",
-    live: "https://example.com",
+    github: "https://github.com/dharancool/portfolio-website",
+    // live: "https://example.com",
   },
 ]
 
@@ -71,15 +71,15 @@ export function Projects() {
                   <Button size="sm" variant="outline" asChild>
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
                       <Github className="mr-2 h-4 w-4" />
-                      Code
+                      View Code
                     </a>
                   </Button>
-                  <Button size="sm" asChild>
+                  {/* <Button size="sm" asChild>
                     <a href={project.live} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2 h-4 w-4" />
                       Live
                     </a>
-                  </Button>
+                  </Button> */}
                 </div>
               </CardContent>
             </Card>

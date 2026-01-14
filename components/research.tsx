@@ -4,29 +4,33 @@ import { FileText, ExternalLink, Share2 } from "lucide-react"
 
 const publications = [
   {
-    title: "Proof-of-Trust-in-Expertise (PoTE): A Consensus Mechanism for Healthcare based Consortium Blockchains",
-    authors: "Your Name, Co-Author Name",
-    venue: "Proceedings of the International Conference on Innovative Computing & Communication (ICICC 2024)",
-    year: "2024",
-    ssrn: "4804243",
+    title: "Classification of benign and malignant breast lesions in mammograms using dense-unified multiscale attention network and data-efficient image transformers",
+    authors: " Gangatharan Idayachandiran,  R. Karthik, S. Paavankumar, Pulaparthi Penchala Deepthi Sri ,  T. Illakiya",
+    venue: "",
+    Published: "16 April 2025",
     abstract:
-      "The growing adoption of blockchain in healthcare promotes reliable patient data management. Establishing a consortium blockchain network interconnecting hospitals, diagnostic laboratories, and pharmaceutical entities ensures real-time tamper-evident access to patient records. This consortium model enhances data exchange efficiency and fortifies security through immutable audit trails. Beyond expediting emergency access to comprehensive medical histories, blockchains prevent authoritative data control and commercial exploitation. Patient empowerment and trust are pivotal, prompting our paper to introduce Proof-of-Trust-in-Expertise (PoTE), a consensus mechanism leveraging medical professionals' trust and expertise, an innovative departure from Proof-of-Work (PoW) and Proof-of-Stake (PoS).",
+      "Breast cancer is a common and a serious health problem and it is the major cause of morbidity and mortality for women. Early detection of the disease is particularly challenging because abnormalities such as masses and microcalcifications exhibit subtle and diverse characteristics that are often difficult to identify in mammograms. In recent years, advancement in artificial intelligence, particularly deep learning (DL), has shown to improve diagnostic accuracy and early-stage tumor detection. This study aims to improve performance of DL models by considering both masses and microcalcifications in the proposed work to classify breast cancer abnormalities. The proposed work introduces a novel dual-track network that employs a combination of dense-unified multiscale attention fusion (UMAF) track and data-efficient image transformer (DeiT). The DeiT track processes the entire image simultaneously using patch embeddings, enabling them to capture multiscale representations and dependencies across the entire image. Simultaneously, the Dense-UMAF track focuses on extracting localized features while utilizing connectivity of DenseNet architecture to enable effective feature reuse. This approach generates relevant input features through residual connections of varying lengths, thereby effectively addressing the vanishing gradient problem. The UMAF improves feature extraction by capturing multiscale information, resulting in a better representation of the input data. This dual-track architecture is specifically designed to capture the characteristics of mass and calcification abnormalities in mammograms, which display both localized features and global contextual patterns. The proposed network was evaluated on the Curated Breast Imaging Subset of Digital Database for Screening Mammography dataset, obtaining a classification accuracy of 88.69%.",
     keywords: [
-      "Blockchain",
-      "Consensus Mechanism",
+      "Breast Cancer",
+      "Deep Learning",
       "Healthcare",
-      "Proof-of-Trust",
-      "Consortium Blockchain",
-      "Trust Management",
+      "CNN",
+      "Transformers",
+      "PyTorch",
+      "TnsorFlow",
+      "Medical Imaging",
+      "Mammography",
+      "Image Classification",
+
     ],
     stats: {
-      downloads: "50+",
-      citations: "1",
-      views: "300+",
+      citations: "2",
+      views: "400+",
     },
-    status: ["Published", "Conference Paper"],
+    status: ["Published", "Journal Paper"],
     statusColors: ["bg-emerald-500/10 text-emerald-400", "bg-blue-500/10 text-blue-400"],
   },
+
   // Add more publications here
 ]
 
@@ -37,8 +41,7 @@ export function Research() {
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold">Research & Publications</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Exploring the frontiers of artificial intelligence through rigorous research, with focus on machine
-            learning, computer vision, and practical AI applications.
+            Explore my research contributions and published works in the field of computer science, focusing on deep learning in healthcare domain.
           </p>
         </div>
 
@@ -65,8 +68,6 @@ export function Research() {
                   </div>
                   <div className="flex gap-6 text-sm">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-primary">{pub.stats.downloads}</div>
-                      <div className="text-muted-foreground">Downloads</div>
                     </div>
                     <div className="text-center">
                       <div className="text-2xl font-bold text-primary">{pub.stats.citations}</div>
@@ -84,17 +85,16 @@ export function Research() {
 
                 {/* Authors */}
                 <p className="text-muted-foreground">{pub.authors}</p>
-
-                {/* Venue */}
-                <p className="text-sm text-muted-foreground">
-                  {pub.venue} • {pub.year} • SSRN ID: {pub.ssrn}
-                </p>
+                <div className="space-y-2">
+                  <p className="text-muted-foreground leading-relaxed"> Published: {pub.Published}</p>
+                </div>
 
                 {/* Abstract */}
                 <div className="space-y-2">
                   <h5 className="font-semibold text-sm uppercase tracking-wide text-muted-foreground">Abstract</h5>
                   <p className="text-muted-foreground leading-relaxed">{pub.abstract}</p>
                 </div>
+                
 
                 {/* Keywords */}
                 <div className="space-y-3">
@@ -111,14 +111,10 @@ export function Research() {
                 {/* Action Buttons */}
                 <div className="flex flex-wrap gap-3 pt-2">
                   <Button asChild>
-                    <a href={`https://ssrn.com/abstract=${pub.ssrn}`} target="_blank" rel="noopener noreferrer">
+                    <a href={`https://link.springer.com/article/10.1140/epjs/s11734-025-01618-8`} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2 h-4 w-4" />
-                      View on SSRN
+                      View Paper
                     </a>
-                  </Button>
-                  <Button variant="outline">
-                    <Share2 className="mr-2 h-4 w-4" />
-                    Cite Paper
                   </Button>
                 </div>
               </div>
