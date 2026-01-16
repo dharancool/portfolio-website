@@ -34,11 +34,11 @@ export function Contact() {
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
 
-      setStatus("Message sent successfully ✅");
+      setStatus("Thank You! and Message sent successfully. I'll get back to you soon!");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       console.error(error);
-      setStatus("Failed to send message ❌ Try again later.");
+      setStatus("Oops ....Failed to send message  Try again later.");
     }
   };
 

@@ -54,43 +54,6 @@ A modern, responsive portfolio website built with Next.js 16, React 19, and Tail
 6. **Research** - Academic publications with abstracts, keywords, and metrics
 7. **Contact** - Contact form and social media links
 
-## Customization
-
-To personalize this portfolio:
-
-1. **Personal Information**: Update name, title, and bio in `components/hero.tsx` and `components/about.tsx`
-2. **Experience**: Modify work history in `components/experience.tsx`
-3. **Projects**: Add your projects in `components/projects.tsx`
-4. **Skills**: Update skill categories in `components/skills.tsx`
-5. **Research**: Add publications in `components/research.tsx`
-6. **Resume**: Replace `public/resume.pdf` with your actual resume
-7. **Social Links**: Update URLs in `components/hero.tsx` and `components/contact.tsx`
-8. **Images**: Replace placeholder images with actual photos
-9. **Colors**: Modify design tokens in `app/globals.css`
-
-## Design System
-
-The portfolio uses a carefully crafted design system:
-
-- **Primary Color**: Teal/Cyan for accents and highlights
-- **Neutrals**: Dark backgrounds with light text for readability
-- **Typography**: Geist Sans for headings and body, Geist Mono for code
-- **Spacing**: Consistent spacing scale using Tailwind
-- **Components**: Reusable shadcn/ui components for consistency
-
-## Performance
-
-- Static site generation for fast loading
-- Optimized images and assets
-- Minimal JavaScript bundle size
-- Server-side rendering for initial page load
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
 
 ## License
 
