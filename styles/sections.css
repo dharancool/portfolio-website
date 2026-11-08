@@ -1,0 +1,137 @@
+/* =============================================================================
+   EXPERIENCE, SKILLS, RESEARCH, ABOUT, CONTACT, FOOTER
+   ========================================================================== */
+
+/* ---------- Experience ---------- */
+
+.timeline {
+  margin: 0;
+  padding: 0 var(--s3);
+  list-style: none;
+}
+
+.job {
+  display: grid;
+  gap: var(--s1);
+  padding-block: var(--s4);
+}
+
+.job + .job {
+  border-top: 1px solid var(--separator);
+}
+
+.job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px var(--s2);
+  color: var(--text);
+}
+
+.job-period {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.job-now {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 22px;
+  padding: 0 9px 0 8px;
+  border-radius: var(--r-pill);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.job-now .status-dot {
+  width: 6px;
+  height: 6px;
+}
+
+.job-company {
+  font-size: 1.375rem;
+  letter-spacing: -0.022em;
+}
+
+.job-role {
+  margin-top: 2px;
+  color: var(--text-2);
+}
+
+.job-points {
+  display: grid;
+  gap: var(--s0);
+  max-width: 68ch;
+  margin-top: var(--s2);
+  padding-left: 1.1em;
+  line-height: 1.55;
+}
+
+.job-points li::marker {
+  color: var(--accent);
+}
+
+.job-body .btn-text {
+  margin-top: var(--s0);
+}
+
+@media (min-width: 760px) {
+  .timeline {
+    padding-inline: var(--s5);
+  }
+
+  .job {
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: var(--s4);
+    padding-block: var(--s5);
+  }
+
+  .job-meta {
+    flex-direction: column;
+    padding-top: 6px;
+  }
+
+  .job-period {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--s0);
+  }
+}
+
+/* Education */
+
+.edu {
+  margin-top: var(--s5);
+}
+
+.edu-row {
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 4px var(--s3);
+  padding-block: var(--s2);
+}
+
+.edu-text {
+  display: grid;
+  flex: 1 1 320px;
+  gap: 2px;
+}
+
+.edu-school {
+  font-weight: var(--w-bold);
+  letter-spacing: -0.012em;
+}
+
+.edu-degree {
+  font-size: var(--t-sm);
+}
+
+.edu-detail {
+  margin-top: 4px;
+}
+
+.edu-period {
+  padding-top: 3px;
+  white-space: nowrap;
+}

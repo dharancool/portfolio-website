@@ -50,8 +50,8 @@ dd {
   margin: 0;
 }
 
-ul[role="list"],
-ol[role="list"] {
+/* zero specificity so component classes can set their own padding */
+:where(ul[role="list"], ol[role="list"]) {
   list-style: none;
   padding: 0;
 }

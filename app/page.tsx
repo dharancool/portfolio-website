@@ -1,5 +1,6 @@
 /* The whole site is this one page. Content lives in /content/site.ts. */
 
+import { Experience } from "@/components/experience"
 import { Hero } from "@/components/hero"
 import { Nav } from "@/components/nav"
 import { SiteUIProvider } from "@/components/site-ui"
@@ -13,6 +14,7 @@ export default function Page() {
         <div id="top" />
         <Hero />
         <Work />
+        <Experience />
       </main>
     </SiteUIProvider>
   )
