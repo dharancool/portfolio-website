@@ -1,60 +1,58 @@
-# Portfolio Website
+# gangatharan.netlify.app
 
-A modern, responsive portfolio website built with Next.js 16, React 19, and Tailwind CSS v4. This project showcases a professional portfolio with sections for about, experience, projects, skills, research publications, and contact information.
+Personal site of Gangatharan Idayachandiran. A single page built with Next.js and exported as static HTML, hosted on Netlify.
 
-## Technologies Used
+## Editing content
 
-### Core Framework
-- **Next.js 16** - React framework with App Router for server-side rendering and static site generation
-- **React 19.2** - Latest version with new features like useEffectEvent and Activity components
-- **TypeScript** - Type-safe JavaScript for better developer experience
+All text, links, projects and jobs live in **[`content/site.ts`](content/site.ts)**. You shouldn't need to touch anything in `components/` to change what the site says.
 
-### Styling
-- **Tailwind CSS v4** - Utility-first CSS framework with new inline theme configuration
-- **shadcn/ui** - High-quality, accessible UI components built on Radix UI
-- **Lucide React** - Beautiful icon library
+| To change… | Edit in `content/site.ts` |
+| --- | --- |
+| Headline, intro, availability | `profile` |
+| The "At a glance" list in the hero | `glance` |
+| Projects and case studies | `projects` (order = display order) |
+| Jobs | `experience` (newest first) |
+| Degrees | `education` |
+| Skills and certifications | `skills`, `certifications` |
+| The paper | `publication` |
+| About paragraphs | `about` |
+| Social links | `links` |
 
-### Features
-- **Responsive Design** - Mobile-first approach with seamless tablet and desktop experiences
-- **Dark Theme** - Professional dark color scheme with teal/cyan accents
-- **Smooth Scrolling** - Navigation with smooth scroll behavior
-- **SEO Optimized** - Proper meta tags and semantic HTML structure
-- **Accessible** - WCAG compliant with proper ARIA labels and keyboard navigation
+**Add a project:** copy an object in `projects` and fill it in.
+- `categories` controls which filter tabs show it.
+- `caseStudy` makes it a full card with a write-up sheet. Leave it out and the project shows as a compact row under "Also built".
+- Set a link to `null` to hide its button.
+- Projects with a case study appear in the ⌘K menu automatically.
 
-## Project Structure
+**Replace the resume:** overwrite `public/Gangatharan_Idayachandiran_Resume.pdf` and keep the same filename.
 
-```
-├── app/
-│   ├── layout.tsx          # Root layout with metadata and fonts
-│   ├── page.tsx            # Main page with all sections
-│   └── globals.css         # Global styles and Tailwind configuration
-├── components/
-│   ├── navigation.tsx      # Fixed navigation bar with smooth scroll
-│   ├── hero.tsx            # Hero section with CTA buttons
-│   ├── about.tsx           # About section with bio
-│   ├── experience.tsx      # Work experience timeline
-│   ├── projects.tsx        # Featured projects showcase
-│   ├── skills.tsx          # Skills organized by category
-│   ├── research.tsx        # Research & Publications section
-│   ├── contact.tsx         # Contact form with social links
-│   └── ui/                 # shadcn/ui components
-├── public/
-│   └── resume.pdf          # Resume file for download
-├── LOCAL_SETUP.md          # Local development setup guide
-└── NETLIFY_DEPLOYMENT.md   # Netlify deployment guide
+**Images:** put WebP files in `public/images/` and set `width`/`height` to the real pixel size. To convert an image: `cwebp -q 80 -resize 1600 0 in.png -o public/images/out.webp`.
+
+## Design
+
+- Tokens (colors, type scale, spacing, motion) are in `styles/tokens.css`. Light and dark values sit side by side.
+- The other files in `styles/` each cover one area: `base`, `nav`, `hero`, `work`, `sections`, `overlay`.
+
+## Run locally
+
+```bash
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # static site in ./out
 ```
 
-## Key Sections
+## Deploy
 
-1. **Hero** - Eye-catching introduction with name, title, and call-to-action buttons including Download Resume
-2. **About** - Professional biography and personal introduction
-3. **Experience** - Timeline of work experience with company details
-4. **Projects** - Showcase of featured projects with images and descriptions
-5. **Skills** - Organized display of technical skills by category
-6. **Research** - Academic publications with abstracts, keywords, and metrics
-7. **Contact** - Contact form and social media links
+Netlify reads `netlify.toml`:
+- Build with `npm run build`, publish `out/`, on Node 22.
+- The old resume URL redirects to the new file.
 
+The contact form uses EmailJS and needs three environment variables set in Netlify (Site settings → Environment variables):
 
-## License
+```
+NEXT_PUBLIC_EMAILJS_SERVICE_ID
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+```
 
-This project is open source and available for personal use.
+The EmailJS template receives `from_name`, `from_email` and `message`.

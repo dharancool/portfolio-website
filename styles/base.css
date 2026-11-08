@@ -447,3 +447,17 @@ button.row:active {
     transform: none;
   }
 }
+
+/* Targets focused by script (skip link, palette jumps) don't need a ring. */
+main:focus,
+[tabindex="-1"]:focus {
+  outline: none;
+}
+
+.not-found {
+  display: grid;
+  justify-items: start;
+  gap: var(--s2);
+  min-height: 100vh;
+  align-content: center;
+}
