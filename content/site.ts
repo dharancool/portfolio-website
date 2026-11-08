@@ -103,7 +103,7 @@ export const projects: Project[] = [
     categories: ["ai-cloud", "full-stack"],
     featured: true,
     metric: { value: "8s → 4s", label: "camera to spoken response" },
-    note: "Client work. Details stay at the level of my resume.",
+    note: "Client work, so I keep the details high-level.",
     links: { live: null, github: null, video: null },
     caseStudy: {
       problem:
@@ -147,7 +147,7 @@ export const projects: Project[] = [
         "Deployed on Render and tested end to end on real devices.",
       ],
       architecture: {
-        nodes: ["React Native app", "Spring Boot REST API", "PostgreSQL"],
+        nodes: ["React Native", "Spring Boot API", "PostgreSQL"],
         highlight: 1,
         caption: "Balances are computed server-side. Clients only render them.",
       },
@@ -188,9 +188,9 @@ export const projects: Project[] = [
         "Added role-based access for Admin, Agent and Client, CSRF protection, multi-filter property search and an analytics dashboard.",
       ],
       architecture: {
-        nodes: ["Django views", "PyMySQL (raw SQL)", "MySQL procedures + triggers"],
+        nodes: ["Django", "Raw SQL (PyMySQL)", "MySQL"],
         highlight: 2,
-        caption: "Business rules are enforced at the query level, not in Python.",
+        caption: "Stored procedures, triggers and functions in MySQL enforce the business rules, not Python.",
       },
       decisions: [
         "Rules live in the database, so they hold no matter which code path writes the data.",

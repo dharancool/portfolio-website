@@ -3,6 +3,7 @@
 import { Hero } from "@/components/hero"
 import { Nav } from "@/components/nav"
 import { SiteUIProvider } from "@/components/site-ui"
+import { Work } from "@/components/work"
 
 export default function Page() {
   return (
@@ -11,6 +12,7 @@ export default function Page() {
       <main id="main" tabIndex={-1}>
         <div id="top" />
         <Hero />
+        <Work />
       </main>
     </SiteUIProvider>
   )
