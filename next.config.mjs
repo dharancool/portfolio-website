@@ -1,11 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  images: {
-    unoptimized: true,
-  },
+  // Plain static HTML in /out, served by Netlify. No server needed.
+  output: "export",
+  images: { unoptimized: true },
+  reactStrictMode: true,
 }
 
 export default nextConfig

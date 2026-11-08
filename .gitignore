@@ -25,3 +25,5 @@ yarn-error.log*
 next-env.d.ts
 LOCAL_SETUP.md 
 NETLIFY_DEPLOYMENT.md
+# source resume dropped in by hand; the served copy lives in /public
+/Gangatharan-Resume.pdf
