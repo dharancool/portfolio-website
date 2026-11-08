@@ -30,6 +30,14 @@ export const profile = {
   location: "Boston, MA",
   availability: "Open to full-time roles from May 2027",
   email: "gangatharan8403@gmail.com",
+  // Round headshot at the top of the page.
+  headshot: {
+    src: "/images/headshot.webp",
+    width: 320,
+    height: 320,
+    alt: "Headshot of Gangatharan Idayachandiran",
+  },
+  // Full-length photo in the About section.
   portrait: {
     src: "/images/portrait.webp",
     width: 535,

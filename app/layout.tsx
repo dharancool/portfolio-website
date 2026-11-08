@@ -52,7 +52,7 @@ const personSchema = {
   "@type": "Person",
   name: profile.name,
   url: site.url,
-  image: `${site.url}/images/portrait.jpg`,
+  image: `${site.url}/images/headshot.jpg`,
   email: `mailto:${profile.email}`,
   jobTitle: "Software Engineering Intern",
   worksFor: { "@type": "Organization", name: "TensorIoT" },

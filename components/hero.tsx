@@ -1,3 +1,4 @@
+import { Fragment } from "react"
 import { glance, profile, site } from "@/content/site"
 import { ArrowRight, ChevronRight, Download } from "@/components/icons"
 import { ShortcutHint } from "@/components/site-ui"
@@ -9,7 +10,29 @@ export function Hero() {
     <section className="hero" aria-labelledby="hero-title">
       <div className="container hero-grid">
         <div className="hero-copy">
-          <p className="mono hero-tag">{profile.tagline}</p>
+          <div className="hero-id">
+            <img
+              className="hero-avatar"
+              src={profile.headshot.src}
+              width={profile.headshot.width}
+              height={profile.headshot.height}
+              alt={profile.headshot.alt}
+              fetchPriority="high"
+              decoding="async"
+            />
+            <p className="mono hero-tag">
+              {/* Each part stays on one line, so wraps only happen at the separators. */}
+              {profile.tagline.split(" · ").map((part, i, all) => (
+                <Fragment key={part}>
+                  <span>
+                    {part}
+                    {i < all.length - 1 && " ·"}
+                  </span>
+                  {i < all.length - 1 && " "}
+                </Fragment>
+              ))}
+            </p>
+          </div>
           <h1 id="hero-title" className="hero-name">
             <span>{first}</span> <span>{rest.join(" ")}</span>
           </h1>

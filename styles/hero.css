@@ -12,9 +12,40 @@
   gap: var(--s6);
 }
 
+.hero-id {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  margin-bottom: var(--s3);
+}
+
+.hero-avatar {
+  flex: none;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  /* thin brass ring with a gap, like the pitch deck */
+  box-shadow:
+    0 0 0 3px var(--bg),
+    0 0 0 4.5px var(--accent);
+}
+
 .hero-tag {
-  margin-bottom: var(--s2);
   color: var(--accent);
+  text-wrap: balance;
+}
+
+.hero-tag span {
+  white-space: nowrap;
+}
+
+@media (min-width: 760px) {
+  .hero-avatar {
+    width: 88px;
+    height: 88px;
+  }
 }
 
 .hero-name {
