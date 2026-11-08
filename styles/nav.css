@@ -1,0 +1,173 @@
+/* =============================================================================
+   NAV: translucent bar, solid fallback where backdrop-filter is missing.
+   ========================================================================== */
+
+.nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  height: var(--nav-h);
+  background: var(--nav-bg);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--d-2) var(--ease);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .nav {
+    background: var(--nav-solid);
+  }
+}
+
+.nav[data-scrolled="true"] {
+  border-bottom-color: var(--separator);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  height: 100%;
+}
+
+.nav-brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 1.0625rem;
+  font-weight: var(--w-bold);
+  letter-spacing: -0.022em;
+}
+
+.nav-links {
+  display: none;
+  align-items: center;
+  margin: 0 0 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 11px;
+  color: var(--text-2);
+  font-size: 0.875rem;
+  transition: color var(--d-1) var(--ease);
+}
+
+.nav-link:hover,
+.nav-link[aria-current] {
+  color: var(--text);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  transform: translateX(-50%) scale(0);
+  transition: transform var(--d-2) var(--ease);
+}
+
+.nav-link[aria-current]::after {
+  transform: translateX(-50%) scale(1);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.nav-search {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 32px;
+  padding: 0 12px 0 11px;
+  border-radius: var(--r-pill);
+  background: var(--fill);
+  color: var(--text-2);
+  font-size: 0.8125rem;
+  transition:
+    background-color var(--d-1) var(--ease),
+    color var(--d-1) var(--ease),
+    transform var(--d-1) var(--ease);
+}
+
+.nav-search::after {
+  content: "";
+  position: absolute;
+  inset: -6px 0;
+}
+
+.nav-search:hover {
+  background: var(--fill-strong);
+  color: var(--text);
+}
+
+.nav-search:active {
+  transform: scale(0.96);
+}
+
+.nav-search-kbd,
+.nav-search-label--wide {
+  display: none;
+}
+
+.nav-search-kbd {
+  height: 20px;
+  margin-right: -6px;
+  background: var(--surface);
+}
+
+.theme-icon--moon {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-icon--sun {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-icon--moon {
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-icon--sun {
+    display: none;
+  }
+
+  :root:not([data-theme="light"]) .theme-icon--moon {
+    display: block;
+  }
+}
+
+@media (min-width: 900px) {
+  .nav-links {
+    display: flex;
+  }
+
+  .nav-actions {
+    margin-left: var(--s0);
+  }
+
+  .nav-search-kbd,
+  .nav-search-label--wide {
+    display: inline-flex;
+  }
+
+  .nav-search-label--narrow {
+    display: none;
+  }
+}

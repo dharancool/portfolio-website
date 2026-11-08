@@ -1,0 +1,38 @@
+# Netlify build settings. These override anything set in the Netlify UI.
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# The old resume URL keeps working.
+[[redirects]]
+  from = "/Gangatharan%20Resume%20MSCS.pdf"
+  to = "/Gangatharan_Idayachandiran_Resume.pdf"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/Gangatharan Resume MSCS.pdf"
+  to = "/Gangatharan_Idayachandiran_Resume.pdf"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
