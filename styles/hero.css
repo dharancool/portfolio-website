@@ -1,0 +1,131 @@
+/* =============================================================================
+   HERO
+   ========================================================================== */
+
+.hero {
+  padding-top: calc(var(--nav-h) + clamp(56px, 10vw, 128px));
+  padding-bottom: clamp(80px, 10vw, 136px);
+}
+
+.hero-grid {
+  display: grid;
+  gap: var(--s6);
+}
+
+.hero-tag {
+  margin-bottom: var(--s2);
+  color: var(--accent);
+}
+
+.hero-name {
+  font-size: var(--t-display);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.hero-name span {
+  display: block;
+}
+
+.hero-headline {
+  max-width: 24ch;
+  margin-top: var(--s3);
+  font-size: var(--t-headline);
+  font-weight: var(--w-bold);
+  line-height: 1.18;
+  letter-spacing: -0.024em;
+}
+
+.hero-intro {
+  max-width: 58ch;
+  margin-top: var(--s2);
+  color: var(--text-2);
+  font-size: 1.125rem;
+  line-height: 1.55;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1);
+  margin-top: var(--s4);
+}
+
+.hero-hint {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: var(--s3);
+  color: var(--text-2);
+}
+
+@media (hover: none) {
+  .hero-hint {
+    display: none;
+  }
+}
+
+/* At a glance */
+
+.glance-row {
+  gap: var(--s2);
+}
+
+.glance-label {
+  flex: 0 0 72px;
+  color: var(--text-2);
+}
+
+.glance-value {
+  font-size: var(--t-sm);
+  line-height: 1.35;
+}
+
+.glance-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: var(--s1) 0 0 var(--s3);
+  color: var(--text-2);
+  font-size: var(--t-xs);
+}
+
+.status-dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.status-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: status-pulse 2.6s var(--ease-out) infinite;
+}
+
+@keyframes status-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  70%,
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+@media (min-width: 980px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    align-items: end;
+  }
+
+  .hero-glance {
+    margin-bottom: 6px;
+  }
+}

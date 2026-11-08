@@ -403,6 +403,8 @@ button.row:active {
 
 .group-label {
   margin: 0 0 var(--s0) var(--s3);
+  font-weight: var(--w-regular);
+  line-height: 1.4;
   color: var(--text-2);
   font-family: var(--font-mono);
   font-size: var(--t-mono);
